@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <link rel="stylesheet" href="style.css">
+         <link rel="website icon" type="jpg"
+    href="storepods.jpg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Stock</title>
+    <script>
+        // Cargar valores guardados
+        window.onload = function() {
+            document.getElementById("s3").textContent = localStorage.getItem("ap3") || 0;
+            document.getElementById("s4").textContent = localStorage.getItem("ap4") || 0;
+            document.getElementById("sfundas").textContent = localStorage.getItem("fundas") || 0;
+            document.getElementById("smagsafe").textContent = localStorage.getItem("magsafe") || 0;
+            document.getElementById("sotros").textContent = localStorage.getItem("otros") || 0;
+        }
+    </script>
+</head>
+<body>
+    <h1>Bienvenido Al Stock de Pods Store!</h1>
+    <p>A continuación verás todos los stock de audífonos y productos de Pods Store!</p>
+
+    <h2>AirPods 3ra Generación</h2>
+    <p>Stock: <span id="s3">0</span></p>
+
+    <h2>AirPods 4ta Generación</h2>
+    <p>Stock: <span id="s4">0</span></p>
+
+    <h2>Fundas</h2>
+    <p>Stock: <span id="sfundas">0</span></p>
+
+    <h2>Magsafe</h2>
+    <p>Stock: <span id="smagsafe">0</span></p>
+
+    <h2>Otros</h2>
+    <p>Stock: <span id="sotros">0</span></p>
+
+    <p>Cambia el Stock tú mismo!</p>
+    <a href="cambiastock.html">Cambia Stock!</a>
+</body>
+</html>

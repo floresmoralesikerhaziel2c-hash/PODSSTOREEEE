@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+    <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>PodStore</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="website icon" type="jpg"
+    href="storepods.jpg">
+    </head>
+    <body>
+        <header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="login.html">Login (Solo trabajadores) </a>
+    </nav>
+</header>
+<head>
+<meta charset="UTF-8">
+<title>FAQ - Pods Store</title>
+
+<style>
+    body {
+        background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #111111);
+        color: white;
+        font-family: 'Inter', sans-serif;
+        padding: 50px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #2af0a2;
+        margin-bottom: 40px;
+        text-shadow: 0 0 10px rgba(42, 240, 162, .6);
+    }
+
+    .faq-container {
+        width: 85%;
+        margin: auto;
+    }
+
+    .faq-item {
+        background: rgba(255,255,255,0.05);
+        border-radius: 10px;
+        margin-bottom: 15px;
+        box-shadow: 0 0 15px rgba(42, 240, 162, 0.2);
+        overflow: hidden;
+    }
+
+    .faq-question {
+        width: 100%;
+        background: none;
+        border: none;
+        outline: none;
+        color: #2af0a2;
+        text-align: left;
+        padding: 18px;
+        font-size: 20px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+    }
+
+    .faq-question:hover {
+        background: rgba(42,240,162,0.15);
+    }
+
+    .icon {
+        transition: .3s;
+    }
+
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 18px;
+        color: #e2e2e2;
+        line-height: 1.6;
+        transition: max-height .4s ease;
+        font-size: 17px;
+    }
+
+    .faq-answer.open {
+        padding-bottom: 15px;
+    }
+</style>
+
+</head>
+<body>
+
+<h1>FAQ — Preguntas Frecuentes</h1>
+
+<div class="faq-container">
+
+    <!-- FAQ 1 -->
+    <div class="faq-item">
+        <button class="faq-question">
+            ¿Cuál es el tiempo de entrega?
+            <span class="icon">➕</span>
+        </button>
+        <div class="faq-answer">
+            Los tiempos de entrega varían según tu ubicación:  
+            • Local: 1–3 días  
+            • Nacional: 2–5 días  
+        </div>
+    </div>
+
+    <!-- FAQ 2 -->
+    <div class="faq-item">
+        <button class="faq-question">
+            ¿Hacen envíos a todo México?
+            <span class="icon">➕</span>
+        </button>
+        <div class="faq-answer">
+            Sí, enviamos a toda la República Mexicana por paqueterías confiables.
+        </div>
+    </div>
+
+    <!-- FAQ 3 -->
+    <div class="faq-item">
+        <button class="faq-question">
+            ¿Los AirPods son originales?
+            <span class="icon">➕</span>
+        </button>
+        <div class="faq-answer">
+            No, son **OEM Premium**.  
+            Somos completamente transparentes: no vendemos productos Apple originales.
+            Nuestros productos son de alta calidad, estéticos y con excelente sonido.
+        </div>
+    </div>
+
+    <!-- FAQ 4 -->
+    <div class="faq-item">
+        <button class="faq-question">
+            ¿Tienen garantía?
+            <span class="icon">➕</span>
+        </button>
+        <div class="faq-answer">
+           No, nuestros productos no incluyen garantía
+        </div>
+    </div>
+
+    <!-- FAQ 5 -->
+    <div class="faq-item">
+        <button class="faq-question">
+            ¿Puedo pagar después de la entrega?
+            <span class="icon">➕</span>
+        </button>
+        <div class="faq-answer">
+            Solo disponible en entregas locales.  
+            En envíos nacionales se requiere pago confirmado.
+        </div>
+    </div>
+
+    <!-- FAQ 6 -->
+    <div class="faq-item">
+        <button class="faq-question">
+            ¿Cómo rastreo mi pedido?
+            <span class="icon">➕</span>
+        </button>
+        <div class="faq-answer">
+            Todos nuestros envíos incluyen un número de guía para ver el avance en tiempo real.
+        </div>
+    </div>
+
+</div>
+
+<script>
+    const buttons = document.querySelectorAll(".faq-question");
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const answer = btn.nextElementSibling;
+            const icon = btn.querySelector(".icon");
+
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null;
+                answer.classList.remove("open");
+                icon.textContent = "➕";
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+                answer.classList.add("open");
+                icon.textContent = "➖";
+            }
+        });
+    });
+</script>
+
+<a href="contacto.html" class="boton">Contacto</a>
+
+</body>
+</html>

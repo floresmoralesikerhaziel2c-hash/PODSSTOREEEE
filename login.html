@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+   <link rel="website icon" type="jpg"
+    href="storepods.jpg">
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+    .box { background: #fff; padding: 15px; border-radius: 8px; width: 300px; margin-bottom: 20px; }
+    input { width: 100%; padding: 8px; margin: 5px 0; }
+    button { width: 100%; padding: 10px; margin-top: 10px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>Iniciar sesión</h2>
+    <form id="loginForm">
+      <label>Usuario:</label>
+      <input type="text" id="user" required>
+      <label>Contraseña:</label>
+      <input type="password" id="pass" required>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <div class="box">
+    <h3>Agregar nuevo usuario</h3>
+    <form id="addForm">
+      <label>Nuevo usuario:</label>
+      <input type="text" id="newUser" required>
+      <button type="submit">Agregar usuario</button>
+    </form>
+  </div>
+
+  <script>
+    // ================================
+    // Configuración de login
+    // ================================
+    const PASSWORD_GLOBAL = "PodStore17";
+    const defaultUsers = ["usuario1", "usuario2"];
+
+    // Inicializar usuarios en localStorage
+    if (!localStorage.getItem("usuarios")) {
+      localStorage.setItem("usuarios", JSON.stringify(defaultUsers));
+    }
+
+    function getUsers() {
+      return JSON.parse(localStorage.getItem("usuarios") || "[]");
+    }
+
+    function saveUsers(list) {
+      localStorage.setItem("usuarios", JSON.stringify(list));
+    }
+
+    // ================================
+    // Login
+    // ================================
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const usuario = document.getElementById("user").value.trim();
+      const pass = document.getElementById("pass").value;
+
+      const users = getUsers();
+
+      if (!users.includes(usuario)) {
+        alert("❌ Usuario no registrado");
+        return;
+      }
+
+      if (pass !== PASSWORD_GLOBAL) {
+        alert("❌ Contraseña incorrecta");
+        return;
+      }
+
+      alert("✅ Bienvenido: " + usuario);
+      window.location.href = "stock.html";
+    });
+
+    // ================================
+    // Agregar usuario
+    // ================================
+    document.getElementById("addForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nuevo = document.getElementById("newUser").value.trim();
+      if (!nuevo) return;
+
+      const users = getUsers();
+      if (users.includes(nuevo)) {
+        alert("⚠️ Ese usuario ya existe");
+        return;
+      }
+
+      users.push(nuevo);
+      saveUsers(users);
+      alert("✅ Usuario agregado: " + nuevo);
+      document.getElementById("newUser").value = "";
+    });
+  </script>
+</body>
+</html>

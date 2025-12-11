@@ -1,0 +1,280 @@
+
+
+/* TIPO DE LETRA/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* FONDO */
+body {
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #111111);
+    background-size: 300% 300%;
+    animation: grad 12s ease infinite;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    
+    padding-top: 120px; /* ← AGREGA ESTO */
+}
+
+@keyframes grad {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* ESPACIADO GLOBAL */
+section {
+    width: 80%;
+    margin: 50px auto;   /* MÁS ESPACIO ENTRE BLOQUES */
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0, 255, 170, 0.1);
+}
+
+/* TITULOS Y TEXTO */
+h1, h2 {
+    text-align: center;
+    color: #2af0a2;
+    text-shadow: 0 0 10px rgba(42, 240, 162, 0.5);
+    margin-bottom: 20px;      /* SEPARACIÓN BAJO EL TÍTULO */
+}
+
+p, h3, h4 {
+    line-height: 1.6;         /* TEXTO MÁS “ESPACIADO” */
+    margin-bottom: 20px;      /* RESPIRA MÁS */
+    text-align: center;
+    color: #e9e9e9;
+}
+
+/* BOTONES */
+.boton {
+    display: block;
+    margin: 35px auto;   /* MÁS ESPACIO ENTRE BOTONES */
+    width: 230px;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 50px;
+    background: #2af0a2;
+    color: #0f0f0f;
+    font-weight: bold;
+    text-decoration: none;
+    transition: .3s;
+    box-shadow: 0 0 18px rgba(42, 240, 162, 0.7);
+}
+
+.boton:hover {
+    background: #55ffc0;
+    box-shadow: 0 0 26px rgba(42, 240, 162, 1);
+}
+
+/* FORMULARIOS */
+input, select {
+    width: 92%;
+    padding: 14px;
+    margin: 12px auto;
+    border-radius: 10px;
+    border: 2px solid #2af0a2;
+    background: rgba(255, 255, 255, 0.06);
+    color: white;
+    font-size: 16px;
+    display: block;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #55ffc0;
+    box-shadow: 0 0 14px rgba(42, 240, 162, 1);
+}
+
+/* TABLAS */
+table {
+    width: 90%;
+    margin: 30px auto;   /* SEPARACIÓN DE TABLAS */
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background: #2af0a2;
+    color: #0f0f0f;
+    padding: 14px;
+    font-size: 18px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #ffffff;
+}
+
+/*HEADER */
+header {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    position: fixed; /* SE QUEDA PEGADO ARRIBA */
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 0 15px rgba(42, 240, 162, 0.3);
+}
+
+nav {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center; /* CENTRAR LOS BOTONES */
+    gap: 35px; /* SEPARACIÓN ENTRE BOTONES */
+}
+
+nav a {
+    color: #2af0a2;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+nav a:hover {
+    background: rgba(42, 240, 162, 0.2);
+    box-shadow: 0 0 12px rgba(42, 240, 162, 0.6);
+}
+
+/* PIE DE PAGINA (CREDITOS) */
+footer {
+    text-align: center;
+    color: #cccccc;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+/* CONTENEDOR DE TARJETAS */
+.contenedor {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* From Uiverse.io by Tiagoadag */
+.card {
+ width: 190px;
+ height: 254px;
+ background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+ border-radius: 20px;
+ transition: all .3s;
+ cursor: pointer;
+}
+
+.card2 {
+ width: 190px;
+ height: 254px;
+ background-color: #1a1a1a;
+ transition: all .2s;
+
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ gap: 10px;
+ color: white;
+ text-align: center;
+}
+
+.card2 img {
+  width: 120px;
+  height: auto;
+}
+
+.card2:hover {
+ transform: scale(0.98);
+ border-radius: 20px;
+}
+
+.card:hover {
+ box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+}
+
+/* Texto */
+.card2 h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.card2 p {
+  font-size: 14px;
+  color: #00ff75;
+  margin: 0;
+}
+
+/* Botón flotante dentro de la tarjeta */
+.boton-flotante {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  background: #00ff75;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* Necesario para que position:absolute funcione en .card2 */
+.card2 {
+  position: relative;   /* ← IMPORTANTE */
+}
+
+.link-tarjeta {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+/* CONTENEDOR DEL FOOTER */
+.footer-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;       /* espacio arriba y abajo */
+  position: relative;
+  bottom: 0;
+}
+
+/*imagenes productos*/
+section {
+ display: flex;
+ width: 670px;
+ height: 330px;
+ }
+ section img{
+   width: 0px;
+   flex-grow: 1;
+   object-fit: cover;
+   opacity:.8 ;
+   transition:.5 ease;
+   }
+   section img:hover {
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter:contrast(120%);
+   }

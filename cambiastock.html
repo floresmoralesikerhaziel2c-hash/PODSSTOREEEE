@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <link rel="stylesheet" href="style.css">
+         <link rel="website icon" type="jpg"
+    href="storepods.jpg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Cambiar Stock</title>
+</head>
+<body>
+    <h1>Cambiar Stock</h1>
+
+    <label>AirPods 3ra Generación:</label>
+    <input type="number" id="ap3" placeholder="Nuevo stock"><br><br>
+
+    <label>AirPods 4ta Generación:</label>
+    <input type="number" id="ap4" placeholder="Nuevo stock"><br><br>
+
+    <label>Fundas:</label>
+    <input type="number" id="fundas" placeholder="Nuevo stock"><br><br>
+
+    <label>Magsafe:</label>
+    <input type="number" id="magsafe" placeholder="Nuevo stock"><br><br>
+
+    <label>Otros:</label>
+    <input type="number" id="otros" placeholder="Nuevo stock"><br><br>
+
+    <button onclick="guardar()">Guardar Cambios</button>
+<a href = "stock.html" class = "Boton" Regresa al Stock!> </a>
+    <script>
+        function guardar() {
+            localStorage.setItem("ap3", document.getElementById("ap3").value);
+            localStorage.setItem("ap4", document.getElementById("ap4").value);
+            localStorage.setItem("fundas", document.getElementById("fundas").value);
+            localStorage.setItem("magsafe", document.getElementById("magsafe").value);
+            localStorage.setItem("otros", document.getElementById("otros").value);
+
+            alert("Stock actualizado!");
+            window.location.href = "stock.html";
+        }
+    </script>
+
+</body>
+</html>
